@@ -6,6 +6,7 @@ gem 'devise'
 gem "mini_magick"
 gem 'carrierwave'
 gem 'simple_form'
+gem 'inherited_resources'
 
 group :development, :test do
   gem 'rspec-rails'

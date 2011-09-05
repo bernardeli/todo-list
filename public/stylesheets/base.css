@@ -1,2 +1,5 @@
 body { padding-top: 60px !important; }
+label { width: 160px; }
+abbr { border-bottom: 1px dotted #666 }
+div.input { margin-bottom: 10px; }
 

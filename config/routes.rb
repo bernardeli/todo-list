@@ -1,5 +1,6 @@
 Todo::Application.routes.draw do
   devise_for :users
+  resources :lists
   resources :overview, :only => :index
 
   # The priority is based upon order of creation:

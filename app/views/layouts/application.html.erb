@@ -15,7 +15,8 @@
             <h3><%= link_to 'Todo List', root_path %></h3>
             <ul class="nav secondary-nav">
               <% if user_signed_in? %>
-                <li><%= link_to "Sign out", destroy_user_session_path %></li>
+                <li><%= link_to "My lists", lists_path %></li>
+                <li><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li>
               <% else %>
                 <li><%= link_to "Sign in", new_user_session_path %></li>
               <% end %>

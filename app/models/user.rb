@@ -8,4 +8,6 @@ class User < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation, :remember_me, :avatar
 
   mount_uploader :avatar, AvatarUploader
+
+  has_many :lists
 end

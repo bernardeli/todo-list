@@ -1,6 +1,10 @@
 class ListsController < InheritedResources::Base
   before_filter :authenticate_user!
 
+  def create
+    create! { lists_path }
+  end
+
   protected
 
   def begin_of_association_chain

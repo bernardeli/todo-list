@@ -1,5 +1,5 @@
 <div class="inputs">
-  <%= f.input :name, :required => true %>
+  <%= f.input :name, :label => "List name", :required => true %>
   <%= f.input :private, :hint => "no one can see this list if private is marked" %>
   <%= f.input :user_id, :as => :hidden, :input_html => { :value => current_user.id } %>
 </div>

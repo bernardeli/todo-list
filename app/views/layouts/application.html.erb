@@ -19,6 +19,7 @@
                 <%= content_tag(:li, link_to("Watched lists", lists_path), :class => active_class(lists_path)) %>
                 <%= content_tag(:li, link_to("Edit profile", edit_user_registration_path), :class => active_class(edit_user_registration_path)) %>
                 <%= content_tag(:li, link_to("Sign out", destroy_user_session_path, :method => :delete)) %>
+                <%= content_tag(:li, image_tag(current_user.avatar.thumb.to_s, :class => "thumb-profile")) %>
               <% else %>
                 <%= content_tag(:li, link_to("Sign in", new_user_session_path), :class => active_class(new_user_session_path)) %>
               <% end %>
@@ -28,22 +29,24 @@
       </div>
     </div>
     <div class="container">
-      <% if notice %>
-        <p class='alert-message block-message success'><%= notice %></p>
-      <% end %>
-
-      <% if alert %>
-        <p class='alert-message block-message error'><%= alert %></p>
-      <% end %>
-
       <div class="row">
         <div class="span12 columns">
+          <% if notice %>
+            <p class='alert-message block-message success'><%= notice %></p>
+          <% end %>
+
+          <% if alert %>
+            <p class='alert-message block-message error'><%= alert %></p>
+          <% end %>
+
           <%= yield %>
         </div>
         <div class="span4 columns">
-          <% if user_signed_in? %>
-            <p><%= link_to "Create a new list", new_list_path, :class => 'btn primary' %></p>
-          <% end %>
+          <div class="well">
+            <% if user_signed_in? %>
+              <p><%= link_to "Create a new list", new_list_path, :class => 'btn primary large' %></p>
+            <% end %>
+          </div>
         </div>
       </div>
     </div>

@@ -36,10 +36,13 @@
       <% end %>
 
       <div class="row">
-        <div class="span3 columns">
-        </div>
-        <div class="span13 columns">
+        <div class="span12 columns">
           <%= yield %>
+        </div>
+        <div class="span4 columns">
+          <% if user_signed_in? %>
+            <p><%= link_to "Create a new list", new_list_path, :class => 'btn primary' %></p>
+          <% end %>
         </div>
       </div>
     </div>

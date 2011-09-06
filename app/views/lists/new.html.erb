@@ -1,0 +1,15 @@
+<h2>New list</h2>
+
+<%= simple_form_for(resource) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="inputs">
+    <%= f.input :name, :required => true, :autofocus => true %>
+    <%= f.input :private %>
+    <%= f.input :user_id, :as => :hidden, :input_html => { :value => current_user.id } %>
+  </div>
+
+  <div class="actions">
+    <%= f.button :submit, "Create" %>
+  </div>
+<% end %>

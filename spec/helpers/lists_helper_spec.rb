@@ -21,6 +21,7 @@ describe ListsHelper do
         helper.remove_task_link(form).should do |link|
           link.should include 'Remove'
           link.should include 'onclick'
+          link.should include 'tasks-fields'
           link.should_not include 'delete'
         end
       end
@@ -35,6 +36,7 @@ describe ListsHelper do
           link.should include 'onclick'
           link.should include 'delete'
           link.should include 'hide'
+          link.should include 'task-fields'
         end
       end
     end

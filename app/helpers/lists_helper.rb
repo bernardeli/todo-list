@@ -9,9 +9,9 @@ module ListsHelper
 
   def remove_task_link(task_form)
     if task_form.object.new_record?
-      link_to_function("Remove", "$(this).parents('.task').remove();")
+      link_to_function("Remove", "$(this).parents('.task-fields').remove();")
     else
-      link_to_function("Remove", "var parent = $(this).parents('.task'); parent.find('.delete').val('1'); parent.hide();")
+      link_to_function("Remove", "var parent = $(this).parents('.task-fields'); parent.find('.delete').val('1'); parent.hide();")
     end
   end
 end

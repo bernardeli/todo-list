@@ -5,6 +5,10 @@ class ListsController < InheritedResources::Base
     create! { lists_path }
   end
 
+  def update
+    update! { lists_path }
+  end
+
   protected
 
   def begin_of_association_chain

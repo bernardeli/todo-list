@@ -9,6 +9,11 @@ class ListsController < InheritedResources::Base
     update! { lists_path }
   end
 
+  def new
+    @list = List.new
+    2.times { @list.tasks.build }
+  end
+
   protected
 
   def begin_of_association_chain

@@ -11,19 +11,19 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110905030109) do
+ActiveRecord::Schema.define(:version => 20110905233933) do
 
   create_table "lists", :force => true do |t|
     t.string   "name"
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "private"
   end
 
   create_table "tasks", :force => true do |t|
     t.text     "description"
     t.integer  "list_id"
-    t.boolean  "private"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

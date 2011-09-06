@@ -2,6 +2,6 @@
 
 <ul>
   <% collection.each do |resource| %>
-    <li><%= resource.name %></li>
+    <li><%= link_to resource.name, edit_resource_path(resource) %></li>
   <% end %>
 </ul>

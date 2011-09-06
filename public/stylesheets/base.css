@@ -3,3 +3,5 @@ label { width: 160px; }
 abbr { border-bottom: 1px dotted #666 }
 div.input { margin: 0 0 10px 0; }
 
+img.thumb-profile { border: 2px solid grey; margin-top: -6px; }
+ul.secondary-nav { margin-top: 10px; }

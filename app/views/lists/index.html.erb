@@ -2,22 +2,26 @@
   <h2>Lists</h2>
 </div>
 
-<table class='zebra-striped'>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Actions</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% collection.each do |resource| %>
+<% if collection.any? %>
+  <table class='zebra-striped'>
+    <thead>
       <tr>
-        <td><%= link_to resource.name, resource %></td>
-        <td>
-          <%= link_to 'Edit', edit_resource_path(resource) %> |
-          <%= link_to 'Destroy', resource, :method => :delete, :confirm => 'Are you sure?' %>
-        </td>
+        <th>Name</th>
+        <th>Actions</th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
+    <tbody>
+      <% collection.each do |resource| %>
+        <tr>
+          <td><%= link_to resource.name, resource %></td>
+          <td>
+            <%= link_to 'Edit', edit_resource_path(resource) %> |
+            <%= link_to 'Destroy', resource, :method => :delete, :confirm => 'Are you sure?' %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% else %>
+  <p>You dont have any list. Create a new one clicking <%= link_to 'here', new_list_path %></p>
+<% end %>

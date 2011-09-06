@@ -1,0 +1,14 @@
+<div id="list">
+  <div class="page-header">
+    <h2><%= resource.name %> <small><%= resource.private ? 'Private' : 'Public' %></small></h2>
+  </div>
+
+  <div class='tasks'>
+    <% resource.tasks.each do |task| %>
+      <div class="task clearfix">
+        <p class="description"><%= task.description %></p>
+        <a href='#'>Done</a>
+      </div>
+    <% end %>
+  </div>
+</div>

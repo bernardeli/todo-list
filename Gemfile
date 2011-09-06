@@ -7,6 +7,7 @@ gem "mini_magick"
 gem 'carrierwave'
 gem 'simple_form'
 gem 'inherited_resources'
+gem 'jquery-rails'
 
 group :development, :test do
   gem 'rspec-rails'

@@ -1,4 +1,6 @@
-<h2 class="page-header">Edit list</h2>
+<div class="page-header">
+  <h2>Edit list</h2>
+</div>
 
 <%= simple_form_for(resource) do |f| %>
   <%= f.error_notification %>
@@ -6,7 +8,7 @@
   <%= render 'form', :f => f %>
 
   <div class="actions">
-    <%= f.button :submit, "Update" %>
+    <%= f.button :submit, "Update", :class => 'btn' %>
   </div>
 <% end %>
 

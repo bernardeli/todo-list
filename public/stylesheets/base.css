@@ -1,7 +1,13 @@
-body { padding-top: 60px !important; }
+.row { margin-top: 60px; }
 label { width: 160px; }
 abbr { border-bottom: 1px dotted #666 }
 div.input { margin: 0 0 10px 0; }
 
-img.thumb-profile { border: 2px solid grey; margin-top: -6px; }
+img.thumb-profile { border: 2px solid grey; margin-top: 4px; }
 ul.secondary-nav { margin-top: 10px; }
+ul.secondary-nav a { line-height: inherit !important; padding: 0 11px !important; }
+ul.secondary-nav li { line-height: 47px; height: 47px; }
+div.task-fields { position: relative; }
+div.task-fields p { position: absolute; top: 2px; right: 293px; }
+div.task-fields p a { background: url('/images/close-button.gif') no-repeat; display: block; text-indent: -5555em; height: 20px; width: 20px;}
+div#lists ul li { padding: 10px; margin-bottom: 7px; }

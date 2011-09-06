@@ -3,7 +3,10 @@
   <%= f.input :private, :hint => "no one can see this list if private is marked" %>
   <%= f.input :user_id, :as => :hidden, :input_html => { :value => current_user.id } %>
 
-  <h5 class="page-header">Tasks</h5>
+  <div class="page-header">
+    <h5>Tasks</h5>
+  </div>
+
   <div id="tasks-fields">
     <% f.simple_fields_for :tasks do |task_form| %>
       <%= render 'task', :task_form => task_form %>

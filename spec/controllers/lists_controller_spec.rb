@@ -5,14 +5,14 @@ describe ListsController do
     sign_in Factory(:user)
   end
 
-  describe "#create" do
+  context "POST create" do
     it "redirects to index" do
       post :create, :list => { :name => 'First list', :private => false }
       response.should redirect_to lists_path
     end
   end
 
-  describe "#update" do
+  context "PUT update" do
     it "redirects to index" do
       list = Factory :list
       put :update, { :id => list.id, :list => { :name => 'Updated list', :private => true } }

@@ -5,9 +5,11 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me, :avatar
+  attr_accessible :email, :password, :password_confirmation, :remember_me, :avatar, :name
 
-  mount_uploader :avatar, AvatarUploader
+  validates_presence_of :name
 
   has_many :lists
+
+  mount_uploader :avatar, AvatarUploader
 end

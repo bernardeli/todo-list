@@ -6,4 +6,12 @@ module ListsHelper
 
     link_to_function 'Add new task', "$('#tasks-fields').append('#{escape_javascript(html)}'.replace(/NEW_RECORD/g, new Date().getTime() ));", :class => 'add-task'
   end
+
+  def remove_task_link(task_form)
+    if task_form.object.new_record?
+      link_to_function("Remove", "$(this).parents('.task').remove();")
+    else
+      link_to_function("Remove", "var parent = $(this).parents('.task'); parent.find('.delete').val('1'); parent.hide();")
+    end
+  end
 end

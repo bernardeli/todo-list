@@ -1,1 +1,5 @@
-<%= task_form.input :description, :label => "Task" %>
+<div class='task-fields'>
+  <%= task_form.input :description, :label => "Task" %>
+  <%= task_form.hidden_field :_destroy, :class => :delete %>
+  <p><%= remove_task_link(task_form) %></p>
+</div>

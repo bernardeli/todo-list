@@ -11,4 +11,22 @@ describe User do
       user.avatar.to_s.should == "/uploads/user/avatar/#{user.id}/image.jpg"
     end
   end
+
+  describe "#lists" do
+    it "destroys lists when user is destroyed" do
+      list = Factory :list
+      user = list.user
+      user.destroy
+      List.count.should == 0
+    end
+  end
+
+  describe "#watches" do
+    it "destroys watches when user is destroyed" do
+      watch = Factory :watch
+      user = watch.user
+      user.destroy
+      Watch.count.should == 0
+    end
+  end
 end

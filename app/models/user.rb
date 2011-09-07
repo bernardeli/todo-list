@@ -9,8 +9,8 @@ class User < ActiveRecord::Base
 
   validates_presence_of :name
 
-  has_many :lists
-  has_many :watches
+  has_many :lists, :dependent => :destroy
+  has_many :watches, :dependent => :destroy
 
   mount_uploader :avatar, AvatarUploader
 end

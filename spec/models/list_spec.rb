@@ -5,6 +5,15 @@ describe List do
   it { should belong_to :user }
   it { should have_many :tasks }
 
+  describe "#tasks" do
+    it "destroys tasks when list is destroyed" do
+      task = Factory(:task)
+      list = task.list
+      list.destroy
+      Task.count.should == 0
+    end
+  end
+
   describe "nested attributes" do
     context "when parameters are filled in" do
       it "accepts nested attributes for tasks" do

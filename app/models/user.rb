@@ -12,5 +12,7 @@ class User < ActiveRecord::Base
   has_many :lists, :dependent => :destroy
   has_many :watches, :dependent => :destroy
 
+  scope :lasts_signed_in, order('current_sign_in_at DESC')
+
   mount_uploader :avatar, AvatarUploader
 end

@@ -1,3 +1,13 @@
 <p>Welcome, <%= current_user.name %> !</p>
-<h5>Last 10 public lists:</h5>
+<div class="page-header">
+  <h2>Last 10 logged users:</h5>
+</div>
 
+<div id='users'>
+  <% @users.each do |user| %>
+    <div class="user clearfix">
+      <%= link_to(image_tag(user.avatar.thumb.url, :class => "thumb-profile"), user_lists_path(user)) %>
+      <%= link_to user.name, user_lists_path(user) %>
+    </div>
+  <% end %>
+</div>

@@ -29,4 +29,12 @@ describe User do
       Watch.count.should == 0
     end
   end
+
+  describe "#lasts_signed_in" do
+    it "returns last users signed in" do
+      first_user = Factory(:user, :current_sign_in_at => Time.now - 1.hour)
+      second_user = Factory(:user, :current_sign_in_at => Time.now)
+      User.lasts_signed_in.should == [second_user, first_user]
+    end
+  end
 end

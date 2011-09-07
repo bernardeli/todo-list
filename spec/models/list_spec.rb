@@ -14,6 +14,15 @@ describe List do
     end
   end
 
+  describe "#watches" do
+    it "destroys watches when list is destroyed" do
+      watch = Factory :watch
+      list = watch.list
+      list.destroy
+      Watch.count.should == 0
+    end
+  end
+
   describe "nested attributes" do
     context "when parameters are filled in" do
       it "accepts nested attributes for tasks" do

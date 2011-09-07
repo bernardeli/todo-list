@@ -1,6 +1,7 @@
 Todo::Application.routes.draw do
   devise_for :users
   resources :overview, :only => :index
+  resources :watches, :only => [:index, :create, :destroy]
   resources :lists do
     put "tasks/:id/done" => "lists/tasks#done", :as => "done_task"
     put "tasks/:id/undone" => "lists/tasks#undone", :as => "undone_task"

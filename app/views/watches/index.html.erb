@@ -1,0 +1,23 @@
+<div class="page-header">
+  <h2>Watched lists</h2>
+</div>
+
+<% if collection.any? %>
+  <table class='zebra-striped'>
+    <thead>
+      <tr>
+        <th>Name</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% collection.each do |resource| %>
+        <tr>
+          <td><%= link_to resource.list.name, resource.list %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% else %>
+  <p>You are not watching any list.</p>
+<% end %>
+

@@ -11,7 +11,7 @@ SimpleForm.setup do |config|
   config.hint_class = 'help-inline'
 
   # CSS class used on errors.
-  # config.error_class = :error
+  config.error_class = "help-block"
 
   # Default tag used on errors.
   # config.error_tag = :span
@@ -23,7 +23,7 @@ SimpleForm.setup do |config|
   # config.error_notification_tag = :p
 
   # CSS class to add for error notification helper.
-  # config.error_notification_class = :error_notification
+  config.error_notification_class = "alert-message error"
 
   # ID to add for error notification helper.
   # config.error_notification_id = nil
@@ -35,7 +35,7 @@ SimpleForm.setup do |config|
   # config.wrapper_class = :input
 
   # CSS class to add to the wrapper if the field has errors.
-  # config.wrapper_error_class = :field_with_errors
+  config.wrapper_error_class = :error
 
   # You can wrap a collection of radio/check boxes in a pre-defined tag, defaulting to none.
   # config.collection_wrapper_tag = nil

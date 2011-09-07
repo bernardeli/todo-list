@@ -6,13 +6,17 @@
   <table class='zebra-striped'>
     <thead>
       <tr>
-        <th>Name</th>
+        <th>List name</th>
+        <th>User name</th>
+        <th>Actions</th>
       </tr>
     </thead>
     <tbody>
       <% collection.each do |resource| %>
         <tr>
-          <td><%= link_to resource.list.name, resource.list %></td>
+          <td><%= link_to resource.list.name, user_list_path(resource.list.user, resource.list) %></td>
+          <td><%= resource.list.user.name %></td>
+          <td><%= link_to "Stop watching", resource, :method => :delete, :confirm => "Are you sure?" %></td>
         </tr>
       <% end %>
     </tbody>

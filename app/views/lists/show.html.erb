@@ -3,7 +3,7 @@
     <h2><%= resource.name %> <small><%= resource.private ? 'Private' : 'Public' %></small></h2>
   </div>
 
-  <div class='tasks'>
+  <div id='tasks'>
     <% resource.tasks.each do |task| %>
       <div id="<%= dom_id task %>" class="task clearfix <%= 'done' if task.done? %>">
         <p class="description"><%= task.description %></p>

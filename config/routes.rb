@@ -3,8 +3,12 @@ Todo::Application.routes.draw do
   resources :overview, :only => :index
   resources :watches, :only => [:index, :create, :destroy]
   resources :lists do
-    put "tasks/:id/done" => "lists/tasks#done", :as => "done_task"
-    put "tasks/:id/undone" => "lists/tasks#undone", :as => "undone_task"
+    resources :tasks, :controller => 'lists/tasks', :only => [] do
+      member do
+        put :done
+        put :undone
+      end
+    end
   end
 
   # The priority is based upon order of creation:

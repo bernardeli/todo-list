@@ -1,4 +1,6 @@
 class Lists::TasksController < InheritedResources::Base
+  before_filter :authenticate_user!
+  belongs_to :list
   respond_to :js, :only => [:done, :undone]
 
   def done
@@ -7,11 +9,5 @@ class Lists::TasksController < InheritedResources::Base
 
   def undone
     resource.undone!
-  end
-
-  protected
-
-  def begin_of_association_chain
-    @list ||= List.find params[:list_id]
   end
 end

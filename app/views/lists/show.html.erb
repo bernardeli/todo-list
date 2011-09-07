@@ -7,7 +7,7 @@
     <% resource.tasks.each do |task| %>
       <div id="<%= dom_id task %>" class="task clearfix <%= 'done' if task.done? %>">
         <p class="description"><%= task.description %></p>
-        <%= link_to '#', task.done ? list_undone_task_path(resource, task) : list_done_task_path(resource, task), :method => :put, :remote => true %>
+        <%= link_to '#', task.done ? undone_list_task_path(resource, task) : done_list_task_path(resource, task), :method => :put, :remote => true %>
       </div>
     <% end %>
   </div>

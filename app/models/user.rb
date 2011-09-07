@@ -11,7 +11,6 @@ class User < ActiveRecord::Base
 
   has_many :lists
   has_many :watches
-  has_many :watched_lists, :through => :watches
 
   mount_uploader :avatar, AvatarUploader
 end

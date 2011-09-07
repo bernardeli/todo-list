@@ -10,6 +10,8 @@ class User < ActiveRecord::Base
   validates_presence_of :name
 
   has_many :lists
+  has_many :watches
+  has_many :watched_lists, :through => :watches
 
   mount_uploader :avatar, AvatarUploader
 end

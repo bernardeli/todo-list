@@ -3,5 +3,5 @@ class List < ActiveRecord::Base
   belongs_to :user
   validates_presence_of :name
 
-  accepts_nested_attributes_for :tasks, :allow_destroy => true, :reject_if => :all_blank
+  accepts_nested_attributes_for :tasks, :allow_destroy => true, :reject_if => proc { |attr| attr['description'].blank? }
 end

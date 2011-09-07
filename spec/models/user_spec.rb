@@ -3,6 +3,8 @@ require 'spec_helper'
 describe User do
   it { should have_many :lists }
   it { should validate_presence_of :name }
+  it { should have_many :watches }
+  it { should have_many(:watched_lists).through(:watches) }
 
   describe "#avatar" do
     it "assigns avatar to user" do

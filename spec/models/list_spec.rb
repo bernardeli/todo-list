@@ -31,4 +31,12 @@ describe List do
       end
     end
   end
+
+  describe ".public" do
+    it "returns only public lists" do
+      public_lists = 2.times.map { Factory(:list, :private => false) }
+      private_lists = 2.times.map { Factory(:list, :private => true) }
+      List.public.all.should == public_lists
+    end
+  end
 end

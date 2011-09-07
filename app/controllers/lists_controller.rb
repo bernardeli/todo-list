@@ -11,7 +11,7 @@ class ListsController < InheritedResources::Base
 
   def new
     @list = List.new
-    2.times { @list.tasks.build }
+    @list.tasks.build
   end
 
   protected

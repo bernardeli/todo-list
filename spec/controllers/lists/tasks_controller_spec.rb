@@ -1,6 +1,7 @@
 require 'spec_helper'
 
 describe Lists::TasksController do
+  before(:each) { sign_in Factory(:user) }
   let(:task) { Factory :task }
 
   context "PUT done" do

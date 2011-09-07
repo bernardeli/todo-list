@@ -19,7 +19,7 @@
                 <%= content_tag(:li, link_to("Watched lists", watches_path), :class => active_class(watches_path)) %>
                 <%= content_tag(:li, link_to("Edit profile", edit_user_registration_path), :class => active_class(edit_user_registration_path)) %>
                 <%= content_tag(:li, link_to("Sign out", destroy_user_session_path, :method => :delete)) %>
-                <%= content_tag(:li, image_tag(current_user.avatar.thumb.url, :class => "thumb-profile")) %>
+                <%= content_tag(:li, link_to(image_tag(current_user.avatar.thumb.url, :class => "thumb-profile"), edit_user_registration_path)) %>
               <% else %>
                 <%= content_tag(:li, link_to("Sign in", new_user_session_path), :class => active_class(new_user_session_path)) %>
               <% end %>
@@ -41,13 +41,13 @@
 
           <%= yield %>
         </div>
-        <div class="span4 columns">
-          <div class="well">
-            <% if user_signed_in? %>
+        <% if user_signed_in? %>
+          <div class="span4 columns">
+            <div class="well">
               <p><%= link_to "Create a new list", new_list_path, :class => 'btn primary large' %></p>
-            <% end %>
+            </div>
           </div>
-        </div>
+        <% end %>
       </div>
     </div>
   </body>

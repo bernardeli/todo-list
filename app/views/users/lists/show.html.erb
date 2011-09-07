@@ -1,0 +1,14 @@
+<div id="list">
+  <div class="page-header">
+    <h2><%= resource.name %> <small>from <%= parent.name %></small></h2>
+  </div>
+
+  <div id='tasks'>
+    <% resource.tasks.each do |task| %>
+      <div id="<%= dom_id task %>" class="task clearfix <%= 'done' if task.done? %>">
+        <p class="description"><%= task.description %></p>
+      </div>
+    <% end %>
+  </div>
+</div>
+

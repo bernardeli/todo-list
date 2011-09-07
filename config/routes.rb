@@ -1,7 +1,13 @@
 Todo::Application.routes.draw do
   devise_for :users
   resources :overview, :only => :index
+
+  resources :users, :only => [] do
+    resources :lists, :only => [:index, :show], :controller => 'users/lists'
+  end
+
   resources :watches, :only => [:index, :create, :destroy]
+
   resources :lists do
     resources :tasks, :controller => 'lists/tasks', :only => [] do
       member do

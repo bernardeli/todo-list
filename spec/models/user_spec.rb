@@ -37,4 +37,33 @@ describe User do
       User.lasts_signed_in.should == [second_user, first_user]
     end
   end
+
+  describe "#watch" do
+    it "returns the related watch object" do
+      user = Factory(:user)
+      list = Factory(:list)
+      watch = Factory(:watch, :user => user, :list => list)
+      user.watch(list).should == watch
+    end
+  end
+
+  describe "#watch?" do
+    context "when user is watching the list" do
+      it "returns true" do
+        user = Factory(:user)
+        list = Factory(:list)
+        watch = Factory(:watch, :user => user, :list => list)
+        user.watch?(list).should be_true
+      end
+    end
+
+    context "when user is not watching the list" do
+      it "returns false" do
+        user = Factory(:user)
+        list = Factory(:list)
+        watch = Factory(:watch)
+        user.watch?(list).should be_false
+      end
+    end
+  end
 end

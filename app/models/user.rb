@@ -15,4 +15,12 @@ class User < ActiveRecord::Base
   scope :lasts_signed_in, order('current_sign_in_at DESC')
 
   mount_uploader :avatar, AvatarUploader
+
+  def watch?(list)
+    !!watch(list)
+  end
+
+  def watch(list)
+    watches.find_by_list_id(list)
+  end
 end

@@ -4,7 +4,7 @@ module ListsHelper
       render('task', :task_form => task_form)
     end
 
-    link_to_function 'Add new task', "$('#tasks-fields').append('#{escape_javascript(html)}'.replace(/NEW_RECORD/g, new Date().getTime() ));", :class => 'add-task'
+    link_to_function 'Add new task', "$('#tasks-fields').append('#{escape_javascript(html)}'.replace(/NEW_RECORD/g, new Date().getTime() ));", :class => 'add-task', :title => "Add new task"
   end
 
   def remove_task_link(task_form)

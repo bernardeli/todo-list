@@ -12,17 +12,17 @@
       <div class="topbar">
         <div class="topbar-inner">
           <div class="container">
-            <h3><%= link_to 'Todo List', root_path %></h3>
+            <h3><%= link_to 'Todo List', root_path, :title => "Todo List" %></h3>
             <ul class="nav secondary-nav">
               <% if user_signed_in? %>
                 <%= content_tag(:li, current_user.name) %>
-                <%= content_tag(:li, link_to("My lists", lists_path), :class => active_class(lists_path)) %>
-                <%= content_tag(:li, link_to("Watched lists", watches_path), :class => active_class(watches_path)) %>
-                <%= content_tag(:li, link_to("Edit profile", edit_user_registration_path), :class => active_class(edit_user_registration_path)) %>
-                <%= content_tag(:li, link_to("Sign out", destroy_user_session_path, :method => :delete)) %>
-                <%= content_tag(:li, link_to(image_tag(current_user.avatar.thumb.url, :class => "thumb-profile"), edit_user_registration_path)) %>
+                <%= content_tag(:li, link_to("My lists", lists_path, :title => "My lists"), :class => active_class(lists_path)) %>
+                <%= content_tag(:li, link_to("Watched lists", watches_path, :title => "Watched lists"), :class => active_class(watches_path)) %>
+                <%= content_tag(:li, link_to("Edit profile", edit_user_registration_path, :title => "Edit profile"), :class => active_class(edit_user_registration_path)) %>
+                <%= content_tag(:li, link_to("Sign out", destroy_user_session_path, :method => :delete, :title => "Sign out")) %>
+                <%= content_tag(:li, link_to(image_tag(current_user.avatar.thumb.url, :class => "thumb-profile", :alt => current_user.name), edit_user_registration_path, :title => "Edit profile")) %>
               <% else %>
-                <%= content_tag(:li, link_to("Sign in", new_user_session_path), :class => active_class(new_user_session_path)) %>
+                <%= content_tag(:li, link_to("Sign in", new_user_session_path), :class => active_class(new_user_session_path, :title => "Sign in")) %>
               <% end %>
             </ul>
           </div>
@@ -45,7 +45,7 @@
         <% if user_signed_in? %>
           <div class="span4 columns">
             <div class="well">
-              <p><%= link_to "Create a new list", new_list_path, :class => 'btn primary large' %></p>
+              <p><%= link_to "Create a new list", new_list_path, :class => 'btn primary large', :title => "Create a new list" %></p>
             </div>
           </div>
         <% end %>

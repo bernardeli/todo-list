@@ -12,4 +12,8 @@ class WatchesController < InheritedResources::Base
   def begin_of_association_chain
     current_user
   end
+
+  def collection
+    @watches ||= end_of_association_chain.page params[:page]
+  end
 end

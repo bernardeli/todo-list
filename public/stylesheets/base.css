@@ -21,3 +21,4 @@ div#tasks div.task.done a { background: url('/images/minus.png') no-repeat; disp
 div#users div.user { font-size: 2.5em; }
 p.action { float: right; }
 p#add-task { margin: 23px 0 0 323px; }
+div.well p { text-align: center; }

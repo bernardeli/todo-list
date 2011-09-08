@@ -8,6 +8,7 @@ ul img.thumb-profile { margin-top: 4px; }
 ul.secondary-nav { margin-top: 10px; }
 ul.secondary-nav a { line-height: inherit !important; padding: 0 11px !important; }
 ul.secondary-nav li { line-height: 47px; height: 47px; }
+ul.secondary-nav li.user-name { margin-right: 11px; }
 div.task-fields { position: relative; }
 div.task-fields p { position: absolute; top: 2px; right: 293px; }
 div.task-fields p a { background: url('/images/close-button.gif') no-repeat; display: block; text-indent: -5555em; height: 20px; width: 20px;}

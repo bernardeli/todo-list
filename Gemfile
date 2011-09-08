@@ -8,6 +8,7 @@ gem 'carrierwave'
 gem 'simple_form'
 gem 'inherited_resources'
 gem 'jquery-rails'
+gem 'kaminari'
 
 group :development, :test do
   gem 'rspec-rails'

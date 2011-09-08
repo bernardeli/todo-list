@@ -1,5 +1,6 @@
 class ListsController < InheritedResources::Base
   before_filter :authenticate_user!
+  respond_to :html, :json
 
   def new
     @list = List.new

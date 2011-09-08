@@ -14,7 +14,7 @@
       <% collection.each do |resource| %>
         <tr>
           <td><%= link_to resource.name, user_list_path(parent, resource) %></td>
-          <td><%= link_to "Watch", watches_path(:watch => { :list_id => resource.id }), :method => :post %></td>
+          <td><%= link_to_watch resource %></td>
         </tr>
       <% end %>
     </tbody>

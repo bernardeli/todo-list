@@ -1,6 +1,6 @@
 FactoryGirl.define do
   factory :task do
-    description 'first list'
+    description 'first task'
     done false
     list
   end

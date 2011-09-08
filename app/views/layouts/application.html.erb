@@ -15,6 +15,7 @@
             <h3><%= link_to 'Todo List', root_path %></h3>
             <ul class="nav secondary-nav">
               <% if user_signed_in? %>
+                <%= content_tag(:li, current_user.name) %>
                 <%= content_tag(:li, link_to("My lists", lists_path), :class => active_class(lists_path)) %>
                 <%= content_tag(:li, link_to("Watched lists", watches_path), :class => active_class(watches_path)) %>
                 <%= content_tag(:li, link_to("Edit profile", edit_user_registration_path), :class => active_class(edit_user_registration_path)) %>

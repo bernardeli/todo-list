@@ -1,0 +1,6 @@
+== Todo List
+
+App for creating some TODO's lists.
+
+You can comment openly if find out any mistake/bug/whatever you want.
+Hope you guys enjoy.

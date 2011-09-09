@@ -23,6 +23,7 @@
                 <%= content_tag(:li, link_to(image_tag(current_user.avatar.thumb.url, :class => "thumb-profile", :alt => current_user.name), edit_user_registration_path, :title => "Edit profile")) %>
               <% else %>
                 <%= content_tag(:li, link_to("Sign in", new_user_session_path, :title => "Sign in"), :class => active_class(new_user_session_path)) %>
+                <%= content_tag(:li, link_to("Sign up", new_user_registration_path, :title => "Sign up"), :class => active_class(new_user_registration_path)) %>
               <% end %>
             </ul>
           </div>

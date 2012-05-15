@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.0.10'
+gem 'rails', '3.2.3'
 gem 'sqlite3'
 gem 'devise'
 gem 'carrierwave'
@@ -16,4 +16,5 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem 'shoulda-matchers'
   gem 'capybara'
+  gem 'ruby-debug19'
 end

@@ -3,7 +3,7 @@ require 'spec_helper'
 describe ListsHelper do
   describe "#add_task_link" do
     it "returns link that adds a new task field" do
-      list = Factory(:list)
+      list = FactoryGirl.create(:list)
       form = SimpleForm::FormBuilder.new(:list, list, self, {}, nil)
       helper.add_task_link(form).should do |link|
         link.should include 'onclick'
@@ -16,7 +16,7 @@ describe ListsHelper do
   describe "#remove_task_link" do
     context "when object is new" do
       it "returns link that removes DOM from page" do
-        list = Factory.build :list
+        list = FactoryGirl.build :list
         form = SimpleForm::FormBuilder.new(:list, list, self, {}, nil)
         helper.remove_task_link(form).should do |link|
           link.should include 'Remove'
@@ -29,7 +29,7 @@ describe ListsHelper do
 
     context "when object is persisted" do
       it "returns link that sets _destroy value to true" do
-        list = Factory :list
+        list = FactoryGirl.create :list
         form = SimpleForm::FormBuilder.new(:list, list, self, {}, nil)
         helper.remove_task_link(form).should do |link|
           link.should include 'Remove'

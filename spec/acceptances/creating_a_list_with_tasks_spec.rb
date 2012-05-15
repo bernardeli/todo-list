@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 feature "Creating a new list with tasks" do
-  let(:user) { Factory(:user, :email => 'user@email.com', :password => 'abc12345') }
+  let(:user) { FactoryGirl.create(:user, :email => 'user@email.com', :password => 'abc12345') }
 
   background do
     visit root_path

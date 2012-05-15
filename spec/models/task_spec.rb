@@ -6,7 +6,7 @@ describe Task do
 
   describe "#done!" do
     it "sets task as done" do
-      task = Factory(:task)
+      task = FactoryGirl.create(:task)
       task.done!
       task.done.should be_true
     end
@@ -14,7 +14,7 @@ describe Task do
 
   describe "#undone!" do
     it "sets task as undone" do
-      task = Factory(:task, :done => true)
+      task = FactoryGirl.create(:task, :done => true)
       task.undone!
       task.done.should be_false
     end
